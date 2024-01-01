@@ -1,37 +1,76 @@
+from datetime import datetime, time
+import pytz
+
 from django.db import models
 from django.contrib.auth.models import User
 from django.core.validators import MinValueValidator
 from django.core.exceptions import ValidationError
-from datetime import datetime
+from django.utils import timezone
+
 
 # Create your models here.
 
 class Reservation(models.Model):
+    DUBLIN_TZ = pytz.timezone('Europe/Dublin')
+
     TIME_SLOTS = (
-        (None, '---------'),  # Blank option
-        (0,'12.30am'),
-        (1, '1.00pm'),
-        (2, '1.30pm'),
-        (3, '2.00pm'),
-        (4, '2.30pm'),
-        (5, '8.00pm'),
-        (6, '8.30pm'),
-        (7, '9.00pm'),
-        (8, '9.30pm'),
+    
+        (0, DUBLIN_TZ.localize(datetime.strptime('12:30', '%H:%M')).time()),
+        (1, DUBLIN_TZ.localize(datetime.strptime('13:00', '%H:%M')).time()),
+        (2, DUBLIN_TZ.localize(datetime.strptime('13:30', '%H:%M')).time()),
+        (3, DUBLIN_TZ.localize(datetime.strptime('14:00', '%H:%M')).time()),
+        (4, DUBLIN_TZ.localize(datetime.strptime('14:30', '%H:%M')).time()),
+        (5, DUBLIN_TZ.localize(datetime.strptime('20:00', '%H:%M')).time()),
+        (6, DUBLIN_TZ.localize(datetime.strptime('20:30', '%H:%M')).time()),
+        (7, DUBLIN_TZ.localize(datetime.strptime('21:00', '%H:%M')).time()),
+        (8, DUBLIN_TZ.localize(datetime.strptime('21:30', '%H:%M')).time()),
     )
+
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
         related_name="reservation"
     )
     num_of_guests = models.IntegerField(validators=[MinValueValidator(1)])
-    created_on = models.DateTimeField(default=datetime.now,editable=False)
+    created_on = models.DateTimeField(default=timezone.now,editable=False)
     update_on = models.DateTimeField(auto_now=True)
-    date_of_booking = models.DateField(default=datetime.now)
+    date_of_booking = models.DateField(default=timezone.now)
     time_of_booking = models.IntegerField(choices=TIME_SLOTS,default=0)
     notes = models.TextField(blank=True,null=True)
     full_name = models.CharField(max_length=100)
-    nick_name = models.CharField(max_length=50,unique=True,blank=True,null=True)
+    nick_name = models.CharField(max_length=50,
+                                unique=True,
+                                blank=True,
+                                null=True)
+
+    def clean(self):
+        """
+        Custom validation to check if the date_of_booking is in the future
+        and if the time_of_booking is in the past for the current date.
+        """
+        now = timezone.now()
+
+        if self.date_of_booking < now.date():
+            raise ValidationError(
+                {'date_of_booking':
+                "It looks like you've selected a date in the past. \
+                Please choose a date in the future for your booking."},
+                code='invalid_date'
+            )
+
+        selected_time = self.TIME_SLOTS[self.time_of_booking][1]
+
+        selected_datetime = self.DUBLIN_TZ.localize(
+            datetime.combine(self.date_of_booking, selected_time)
+        )
+
+        if self.date_of_booking == now.date() and selected_datetime < now:
+            raise ValidationError(
+                {'time_of_booking':
+                "It looks like you've selected a time in the past for today. \
+                Please choose a future time for your booking."},
+                code='invalid_time'
+            )
 
     class Meta:
         """Meta class for Reservation model"""
