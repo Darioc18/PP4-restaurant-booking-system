@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.core.validators import MinValueValidator
 from django.core.exceptions import ValidationError
 from datetime import datetime
 
@@ -23,7 +24,7 @@ class Reservation(models.Model):
         on_delete=models.CASCADE,
         related_name="reservation"
     )
-    num_of_guests = models.IntegerField()
+    num_of_guests = models.IntegerField(validators=[MinValueValidator(1)])
     created_on = models.DateTimeField(default=datetime.now,editable=False)
     update_on = models.DateTimeField(auto_now=True)
     date_of_booking = models.DateField(default=datetime.now)
