@@ -42,10 +42,14 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'menu' %}">Menu</a>
-                    </li>
+                    </li>                    
                     {% if user.is_authenticated %}
+                    <!--The Logout and Book a Table links will be only visible when an authorized user is logged in.-->
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'booking' %}">Book a Table</a>
                     </li>
                     {% else %}
                     <li class="nav-item">
