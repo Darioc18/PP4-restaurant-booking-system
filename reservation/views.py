@@ -1,5 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
+from django.contrib.auth.decorators import login_required
 from django.views import generic, View
 from .models import Reservation
 from django.views.generic.edit import CreateView
@@ -56,14 +57,18 @@ class UserReservationsList(View):
             'all_res': all_res
         }
         return render(request, 'reservations_list.html', context)
-    
+
 class EditReservationView(View):
     """
     Allows the user to edit a reservation.
     """
 
     def get(self, request, reservation_id):
-        reservation = get_object_or_404(Reservation, id=reservation_id, author=request.user)
+        reservation = get_object_or_404(
+            Reservation,
+            id=reservation_id,
+            author=request.user
+        )
         form = ReservationForm(instance=reservation)
         context = {
             'form': form,
@@ -72,7 +77,11 @@ class EditReservationView(View):
         return render(request, 'edit_reservation.html', context)
 
     def post(self, request, reservation_id):
-        reservation = get_object_or_404(Reservation, id=reservation_id, author=request.user)
+        reservation = get_object_or_404(
+            Reservation,
+            id=reservation_id,
+            author=request.user
+        )
         form = ReservationForm(request.POST, instance=reservation)
         if form.is_valid():
             form.save()
@@ -82,3 +91,29 @@ class EditReservationView(View):
             'reservation': reservation,
         }
         return render(request, 'edit_reservation.html', context)
+    
+class DeleteReservationView(View):
+    """
+    Allows the user to delete a reservation.
+    """
+
+    def get(self, request, reservation_id):
+        reservation = get_object_or_404(
+            Reservation,
+            id=reservation_id,
+            author=request.user
+        )
+        return render(
+            request,
+            'delete_reservation.html',
+            {'reservation': reservation}
+        )
+
+    def post(self, request, reservation_id):
+        reservation = get_object_or_404(
+            Reservation,
+            id=reservation_id,
+            author=request.user
+        )
+        reservation.delete()
+        return redirect('reservations_list')  # Redirect to the reservations list
