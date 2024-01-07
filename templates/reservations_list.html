@@ -15,7 +15,7 @@
                         <h5 class='card-title text-uppercase text-center'>{{ reservation.full_name }}</h5>
                         <h5 class='card-title text-uppercase text-center'>{{ reservation.nick_name }}</h5>
                         <h6 class="card-subtitle mb-2 text-muted">{{ reservation.date_of_booking }} at
-                            {{ reservation.time_of_booking }}</h6>
+                            {{ reservation.get_time_display }}</h6>
                         <div class='card-text'>
                             <p>Number of Guests: {{ reservation.num_of_guests }}</p>
                             <p>Notes: {{ reservation.notes }}</p>                                                     
