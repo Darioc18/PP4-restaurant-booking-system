@@ -1,6 +1,10 @@
 from django import forms
 from .models import Reservation
 
+class DateInput(forms.DateInput):
+    """Custom widget that specifically handles dates"""
+    input_type = 'date'
+
 class ReservationForm(forms.ModelForm):
     """Form to book a table"""
     class Meta:
@@ -9,5 +13,5 @@ class ReservationForm(forms.ModelForm):
         fields = '__all__'
         exclude = ['author']
         widgets = {
-            'date_of_booking': forms.DateInput(attrs={'type': 'datetime-local'}),
+            'date_of_booking': DateInput(),
         }

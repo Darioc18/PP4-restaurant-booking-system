@@ -71,6 +71,12 @@ class Reservation(models.Model):
                 Please choose a future time for your booking."},
                 code='invalid_time'
             )
+        
+    def get_time_display(self):
+        """
+        Get the display value for the time_of_booking field.
+        """
+        return self.TIME_SLOTS[self.time_of_booking][1].strftime('%H:%M')
 
     class Meta:
         """Meta class for Reservation model"""

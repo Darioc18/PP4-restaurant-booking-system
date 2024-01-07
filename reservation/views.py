@@ -1,6 +1,6 @@
 from django.http import HttpResponse
 from django.shortcuts import render
-from django.views import generic
+from django.views import generic, View
 from .models import Reservation
 from django.views.generic.edit import CreateView
 from .forms import ReservationForm  # Create a form for the Reservation model
@@ -41,3 +41,18 @@ class BookingView(CreateView):
             return HttpResponse("Thank you for your booking. Your reservation is successful.")
         else:
             return HttpResponse("Booking incomplete. Please verify your booking details.")
+        
+class UserReservationsList(View):
+    """
+        Directs to the user's reservation page, where the get method
+        retrieves all reservations made by the logged-in user.
+    """
+
+    def get(self, request,):
+        reservations = Reservation.objects.filter(author=request.user)
+        all_res = Reservation.objects.all()
+        context = {
+            'reservations': reservations,
+            'all_res': all_res
+        }
+        return render(request, 'reservations_list.html', context)
