@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from .models import Reservation
 from django.views.generic.edit import CreateView
@@ -56,3 +56,29 @@ class UserReservationsList(View):
             'all_res': all_res
         }
         return render(request, 'reservations_list.html', context)
+    
+class EditReservationView(View):
+    """
+    Allows the user to edit a reservation.
+    """
+
+    def get(self, request, reservation_id):
+        reservation = get_object_or_404(Reservation, id=reservation_id, author=request.user)
+        form = ReservationForm(instance=reservation)
+        context = {
+            'form': form,
+            'reservation': reservation,
+        }
+        return render(request, 'edit_reservation.html', context)
+
+    def post(self, request, reservation_id):
+        reservation = get_object_or_404(Reservation, id=reservation_id, author=request.user)
+        form = ReservationForm(request.POST, instance=reservation)
+        if form.is_valid():
+            form.save()
+            return redirect('reservations_list')  # Redirect to the reservations list
+        context = {
+            'form': form,
+            'reservation': reservation,
+        }
+        return render(request, 'edit_reservation.html', context)
