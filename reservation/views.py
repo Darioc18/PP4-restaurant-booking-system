@@ -1,6 +1,5 @@
-from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, redirect
-from django.contrib.auth.decorators import login_required
+from django.contrib import messages
 from django.views import generic, View
 from .models import Reservation
 from django.views.generic.edit import CreateView
@@ -27,7 +26,7 @@ class BookingView(CreateView):
     # model = Reservation
     form_class = ReservationForm
     template_name = 'booking.html'
-    success_message = "Booking successful!"
+    # success_message = "Booking successful!"
 
     def booking_view(self, request):
         return render(request, 'booking.html')
@@ -39,9 +38,11 @@ class BookingView(CreateView):
             reservation = form.save(commit=False)
             reservation.author = request.user
             reservation.save()
-            return HttpResponse("Thank you for your booking. Your reservation is successful.")
+
+            return redirect('confirmation_page') # Redirect to the confirmation page
         else:
-            return HttpResponse("Booking incomplete. Please verify your booking details.")
+            messages.error(request, "Booking incomplete. Please verify your booking details.")
+        return redirect('booking')  # Redirect to the booking page with errors
         
 class UserReservationsList(View):
     """
@@ -117,3 +118,13 @@ class DeleteReservationView(View):
         )
         reservation.delete()
         return redirect('reservations_list')  # Redirect to the reservations list
+    
+class ConfirmationView(View):
+    """
+    View for handling the confirmation page
+    after a successful booking.
+    """
+    template_name = 'confirmation_page.html'
+
+    def get(self, request):
+        return render(request, 'confirmation_page.html')
