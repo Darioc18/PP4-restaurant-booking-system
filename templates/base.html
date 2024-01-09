@@ -28,42 +28,43 @@
 
     <!-- Navigation -->
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+    <nav class="navbar navbar-expand-lg navbar-light coloured-ribbon">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">Restaurant name</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarText">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{% url 'menu' %}">Menu</a>
-                    </li>                    
-                    {% if user.is_authenticated %}
-                    <!--The Logout and Book a Table links will be only visible when an authorized user is logged in.-->
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'booking' %}">Book a Table</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'reservations_list' %}">My Reservations</a>
-                    </li>
-                    {% else %}
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-                            href="{% url 'account_signup' %}">Register</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
-                    </li>
-                    {% endif %}
-                </ul>
+            <div class="coloured-navbar-content">
+                <a class="navbar-brand" href="{% url 'home' %}">Restaurant Name</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'menu' %}">Menu</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'booking' %}">Book a Table</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'reservations_list' %}">My Reservations</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                                href="{% url 'account_signup' %}">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
             </div>
         </div>
     </nav>
@@ -80,12 +81,34 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer mt-auto py-3 dark-bg">
-        <p class="m-0 text-center text-white">Made by Code Instituters</p>
-        <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
-            <i class="fab fa-twitter-square ms-3"></i>
-            <i class="fab fa-instagram-square ms-3"></i>
-            <i class="fab fa-youtube-square ms-3"></i></p>
+    <footer class="footer mt-auto py-3 coloured-ribbon">
+        <div class="container">
+            <div class="row">
+                <!-- Left Column: Address, Phone, Email -->
+                <div class="col-md-4">
+                    <h5>Contact Information</h5>
+                    <p>123 Restaurant St.</p>
+                    <p>City, Country</p>
+                    <p>Phone: +123 456 789</p>
+                    <p>Email: info@example.com</p>
+                </div>
+    
+                <!-- Middle Column: Opening Time -->
+                <div class="col-md-4 text-center">
+                    <h5>Opening Hours</h5>
+                    <p>Monday - Friday: 9 AM - 10 PM</p>
+                    <p>Saturday - Sunday: 10 AM - 11 PM</p>
+                </div>
+    
+                <!-- Right Column: Social Media Links -->
+                <div class="col-md-4 text-end">
+                    <h5>Connect With Us</h5>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram-square"></i> Instagram</a>
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-square"></i> Facebook</a>
+                    <a href="https://github.com" target="_blank"><i class="fab fa-github-square"></i> GitHub</a>
+                </div>
+            </div>
+        </div>
     </footer>
 </body>
 
