@@ -26,12 +26,28 @@ class Reservation(models.Model):
         (8, DUBLIN_TZ.localize(datetime.strptime('21:30', '%H:%M')).time()),
     )
 
+    NUM_OF_GUESTS_SELECTION = (
+    ('1', '1'),
+    ('2', '2'),
+    ('3', '3'),
+    ('4', '4'),
+    ('5', '5'),
+    ('6', '6'),
+    ('7', '7'),
+    ('8', '8'),
+    ('9', '9'),
+    ('10', '10'),
+)
+
     author = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
         related_name="reservation"
     )
-    num_of_guests = models.IntegerField(validators=[MinValueValidator(1)])
+    num_of_guests = models.CharField(
+        choices=NUM_OF_GUESTS_SELECTION,
+        max_length=2
+    )
     created_on = models.DateTimeField(default=timezone.now,editable=False)
     update_on = models.DateTimeField(auto_now=True)
     date_of_booking = models.DateField(default=timezone.now)
@@ -39,9 +55,10 @@ class Reservation(models.Model):
     notes = models.TextField(blank=True,null=True)
     full_name = models.CharField(max_length=100)
     nick_name = models.CharField(max_length=50,
-                                unique=True,
-                                blank=True,
-                                null=True)
+        unique=True,
+        blank=True,
+        null=True
+    )
 
     def clean(self):
         """
