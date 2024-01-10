@@ -20,6 +20,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
     </script>
+    <script src="https://kit.fontawesome.com/c355300088.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 </head>
@@ -28,10 +29,10 @@
 
     <!-- Navigation -->
 
-    <nav class="navbar navbar-expand-lg navbar-light coloured-ribbon">
+    <nav class="navbar navbar-expand-lg coloured-ribbon">
         <div class="container-fluid">
             <div class="coloured-navbar-content">
-                <a class="navbar-brand" href="{% url 'home' %}">Restaurant Name</a>
+                <a class="navbar-brand" href="{% url 'home' %}"><img class="name-logo" src="{% static 'images/name_logo.png' %}" alt="name-logo" aria-label="Go to the home page"></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                     aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -46,7 +47,7 @@
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
+                            <a class="nav-link" aria-current="page" href="{% url 'account_logout' %}">Logout</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{% url 'booking' %}">Book a Table</a>
@@ -56,11 +57,11 @@
                         </li>
                         {% else %}
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+                            <a class="nav-link" aria-current="page"
                                 href="{% url 'account_signup' %}">Register</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" href="{% url 'account_login' %}">Login</a>
+                            <a class="nav-link" aria-current="page" href="{% url 'account_login' %}">Login</a>
                         </li>
                         {% endif %}
                     </ul>
@@ -70,11 +71,24 @@
     </nav>
 
     <main class="flex-shrink-0 main-bg">
-        {% if user.is_authenticated %}
+        <div class="content__container">
+            {% if messages %}
+                <div class="message-container" id="messages-notes">
+                {% for message in messages %}
+                <div class="message-container__message">
+                    <p class="message-container__message--text">{{ message }}</p>
+                </div>
+                {% endfor %}
+                </div>
+            {% endif %} 
+        </div>
+
+
+        <!-- {% if user.is_authenticated %}
         <p class="text-end m-3">You are logged in as {{ user }}</p>
         {% else %}
         <p class="text-end m-3">You are not logged in</p>
-        {% endif %}
+        {% endif %} -->
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
@@ -86,30 +100,42 @@
             <div class="row">
                 <!-- Left Column: Address, Phone, Email -->
                 <div class="col-md-4">
-                    <h5>Contact Information</h5>
-                    <p>123 Restaurant St.</p>
-                    <p>City, Country</p>
+                    <h6>Contact Information</h6>
+                    <p>123 Culinary Avenue, Dublin</p>
                     <p>Phone: +123 456 789</p>
-                    <p>Email: info@example.com</p>
+                    <p>Email: info@soupa.com</p>
                 </div>
     
                 <!-- Middle Column: Opening Time -->
                 <div class="col-md-4 text-center">
-                    <h5>Opening Hours</h5>
-                    <p>Monday - Friday: 9 AM - 10 PM</p>
-                    <p>Saturday - Sunday: 10 AM - 11 PM</p>
+                    <h6>Opening Hours</h6>
+                    <p>Monday - Sunday: </p>
+                    <p>12.00am - 3.30pm</p>
+                    <p>8pm - 10.30pm</p>
                 </div>
     
                 <!-- Right Column: Social Media Links -->
                 <div class="col-md-4 text-end">
-                    <h5>Connect With Us</h5>
-                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram-square"></i> Instagram</a>
-                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-square"></i> Facebook</a>
-                    <a href="https://github.com" target="_blank"><i class="fab fa-github-square"></i> GitHub</a>
+                    <h6>Follow Us</h6>
+                    <div class="footer-icons">
+                        <a href="https://www.facebook.com/" target="_blank" class="fab fa-facebook-square"></a>                        
+                        <a href="https://www.instagram.com/" target="_blank" class="fab fa-instagram-square"></a>                        
+                        <a href="https://github.com/Darioc18/PP4-restaurant-booking-system" target="_blank" class="fab fa-github-square"></a>
+                    </div>
                 </div>
             </div>
         </div>
     </footer>
+
+    <script>
+        // Function to display and hide alert messages.
+        setTimeout(function () {
+            let messagesDj = document.getElementById('messages-notes');
+            if (messagesDj) {
+            messagesDj.style.display = 'none';
+        }
+        }, 2500);
+    </script>
 </body>
 
 </html>

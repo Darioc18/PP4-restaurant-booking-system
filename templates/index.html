@@ -1,5 +1,11 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+{% load static %}
 
-<div>This is the homepage</div>
+{% block content %}
 
-{%endblock%}
+<!-- Hero Image -->
+<img class="hero-image" src="{% static 'images/restaurant.jpg' %}" alt="Restaurant Image">
+
+
+
+{% endblock %}
