@@ -41,7 +41,7 @@ class BookingView(CreateView):
 
             return redirect('confirmation_page') # Redirect to the confirmation page
         else:
-            messages.error(request, "Booking incomplete. Please verify your booking details.")
+            messages.error(request, "Booking incomplete. Please check you booking date is not in the past and your number of guests is between 1 and 10.")
         return redirect('booking')  # Redirect to the booking page with errors
         
 class UserReservationsList(View):
