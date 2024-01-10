@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Make a Reservation</h2>
+<h3>Make a Reservation</h3>
 <form method="post" action="{% url 'booking' %}">
 {% csrf_token %}
 {{ form.as_p }}
+<p>For parties larger than 10 people, please contact the restaurant directly to make a reservation.</p>
 <button type="submit">Book Now</button>
 </form>
 {% endblock %}
