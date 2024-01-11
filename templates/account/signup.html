@@ -5,7 +5,7 @@
 {% block head_title %}{% trans "Signup" %}{% endblock %}
 
 {% block content %}
-<div class="container registration-form">
+<div class="container" id="signup-form">
   <div class="row">
     <div class="col-md-3 mx-auto mt-3">
       <h4>{% trans "Sign Up" %}</h4>
@@ -15,29 +15,33 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-md-3 mx-auto mt-2">
+    <div class="col-md-3 mx-auto mt-2 offset-md-2">
       <form class="signup" id="signup_form" method="post"
         action="{% url 'account_signup' %}">
 
         {% csrf_token %}
 
-        <div class="mb-3 offset-md-2">
+        <div class="mb-3">
           <label for="{{ form.username.id_for_label }}">{{ form.username.label }}</label>
+          <br>
           {{ form.username }}
         </div>
 
-        <div class="mb-3 offset-md-2">
+        <div class="mb-3">
           <label for="{{ form.email.id_for_label }}">{{ form.email.label }}</label>
+          <br>
           {{ form.email }}
         </div>
 
-        <div class="mb-3 offset-md-2">
+        <div class="mb-3">
           <label for="{{ form.password1.id_for_label }}">{{ form.password1.label }}</label>
+          <br>
           {{ form.password1 }}
         </div>
 
-        <div class="mb-3 offset-md-2">
+        <div class="mb-3">
           <label for="{{ form.password2.id_for_label }}">{{ form.password2.label }}</label>
+          <br>
           {{ form.password2 }}
         </div>
         
@@ -45,7 +49,7 @@
         <input type="hidden" name="{{ redirect_field_name }}"
           value="{{ redirect_field_value }}" />
         {% endif %}
-        <button class="btn btn-success mb-3 offset-md-2 btn-lg" type="submit">
+        <button class="btn btn-success mb-3 btn-lg" type="submit">
           {% trans "Sign Up" %} &raquo;</button>
       </form>
     </div>
