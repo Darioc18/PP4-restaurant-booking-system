@@ -87,6 +87,8 @@ class EditReservationView(View):
         if form.is_valid():
             form.save()
             return redirect('reservations_list')  # Redirect to the reservations list
+        else:
+            messages.error(request, "Invalid booking. Please ensure your booking date is not in the past.")
         context = {
             'form': form,
             'reservation': reservation,
