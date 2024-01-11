@@ -2,9 +2,9 @@
 
 {% block content %}
 
-<section id="delete-booking" class="delete_booking">
-    <div class="container">
-        <h2 class="stroke">Delete Reservation</h2>
+<div class="container">
+    <div class="col-md-4 mx-auto mt-5">
+        <h4 class="stroke">Delete Reservation</h4>
         <p>Are you sure you want to delete the reservation for {{ reservation.full_name }} on {{ reservation.date_of_booking }} at {{ reservation.get_time_display }}?</p>
         <form method="POST" class="form">
             {% csrf_token %}
@@ -13,6 +13,7 @@
             <a href="{% url 'reservations_list' %}" class="btn btn-secondary">Cancel</a>
         </form>
     </div>
-</section>
+</div>
+
 
 {% endblock %}
