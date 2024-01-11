@@ -1,135 +1,133 @@
 {% extends "base.html" %} {% block content %}
-<section class="background-pattern">
-    <div class="container">
-        <div class="row mt-4">
-            <div class="col-md-12">
-                <h2 class="text-center mb-4">Menu</h2>
-        
-                <div class="menu-navigation">
-                    <button onclick="scrollToCategory('appetizers')">Appetizers</button>
-                    <button onclick="scrollToCategory('main-courses')">Main Courses</button>
-                    <button onclick="scrollToCategory('desserts')">Desserts</button>
-                </div>
+<div class="container">
+    <div class="row mt-4">
+        <div class="col-md-12">
+            <h2 class="text-center mb-4">Menu</h2>
+    
+            <div class="menu-navigation">
+                <button onclick="scrollToCategory('appetizers')">Appetizers</button>
+                <button onclick="scrollToCategory('main-courses')">Main Courses</button>
+                <button onclick="scrollToCategory('desserts')">Desserts</button>
+            </div>
 
-                <div class="menu-category">
-                    <h4 class="category" id="appetizers">Appetizers</h4>
-                    <ul>
-                        <hr>
-                        <li class="menu-item">
-                            <div>
-                                <span>Roasted Butternut Squash Soup Shots</span>
-                                <p class="menu-description">Small servings of creamy butternut squash soup with a hint of roasted garlic.</p>
-                            </div>
-                            <span class="menu-price">€4.50</span>
-                        </li>
-                        <hr>
-                        <li class="menu-item">
-                            <div>
-                                <span>Spicy Bean and Corn Salsa</span>
-                                <p class="menu-description">A zesty soup-inspired salsa with black beans, corn, tomatoes, and a kick of spice, served with tortilla chips.</p>
-                            </div>
-                            <span class="menu-price">€6.00</span>
-                        </li>
-                        <hr>
-                        <li class="menu-item">
-                            <div>
-                                <span>Chilled Cucumber Avocado Soup</span>
-                                <p class="menu-description">Refreshing cucumber and creamy avocado blended into a chilled soup, garnished with a touch of dill.</p>
-                            </div>
-                            <span class="menu-price">€5.50</span>
-                        </li>
-                        <hr>
-                        <li class="menu-item">
-                            <div>
-                                <span>Mushroom and Barley Stuffed Phyllo Cups</span>
-                                <p class="menu-description">Mini phyllo cups filled with a savory mix of mushroom and barley soup, topped with a crispy layer.</p>
-                            </div>
-                            <span class="menu-price">€7.00</span>
-                        </li>
-                        <hr>
-                    </ul>
-                </div>
+            <div class="menu-category">
+                <h4 class="category" id="appetizers">Appetizers</h4>
+                <ul>
+                    <hr>
+                    <li class="menu-item">
+                        <div>
+                            <span>Roasted Butternut Squash Soup Shots</span>
+                            <p class="menu-description">Small servings of creamy butternut squash soup with a hint of roasted garlic.</p>
+                        </div>
+                        <span class="menu-price">€4.50</span>
+                    </li>
+                    <hr>
+                    <li class="menu-item">
+                        <div>
+                            <span>Spicy Bean and Corn Salsa</span>
+                            <p class="menu-description">A zesty soup-inspired salsa with black beans, corn, tomatoes, and a kick of spice, served with tortilla chips.</p>
+                        </div>
+                        <span class="menu-price">€6.00</span>
+                    </li>
+                    <hr>
+                    <li class="menu-item">
+                        <div>
+                            <span>Chilled Cucumber Avocado Soup</span>
+                            <p class="menu-description">Refreshing cucumber and creamy avocado blended into a chilled soup, garnished with a touch of dill.</p>
+                        </div>
+                        <span class="menu-price">€5.50</span>
+                    </li>
+                    <hr>
+                    <li class="menu-item">
+                        <div>
+                            <span>Mushroom and Barley Stuffed Phyllo Cups</span>
+                            <p class="menu-description">Mini phyllo cups filled with a savory mix of mushroom and barley soup, topped with a crispy layer.</p>
+                        </div>
+                        <span class="menu-price">€7.00</span>
+                    </li>
+                    <hr>
+                </ul>
+            </div>
 
-                <div class="menu-category">
-                    <h4 class="category" id="main-courses">Main Courses</h4>
-                    <ul>
-                        <hr>
-                        <li class="menu-item">
-                            <div>
-                                <span>Chicken and Wild Rice Soup</span>
-                                <p class="menu-description">Hearty soup with tender chicken, wild rice, and a medley of vegetables in a flavorful broth.</p>
-                            </div>
-                            <span class="menu-price">€9.50</span>
-                        </li>
-                        <hr>
-                        <li class="menu-item">
-                            <div>
-                                <span>Lentil and Vegetable Stew</span>
-                                <p class="menu-description">A robust stew featuring lentils, carrots, potatoes, and spinach in a spiced broth.</p>
-                            </div>
-                            <span class="menu-price">€8.50</span>
-                        </li>
-                        <hr>
-                        <li class="menu-item">
-                            <div>
-                                <span>Thai Coconut Curry Noodle Soup</span>
-                                <p class="menu-description">A fusion of Thai flavors with coconut milk, curry, rice noodles, and a variety of colorful vegetables.</p>
-                            </div>
-                            <span class="menu-price">€10.50</span>
-                        </li>
-                        <hr>
-                        <li class="menu-item">
-                            <div>
-                                <span>Seafood Chowder</span>
-                                <p class="menu-description">Rich and creamy chowder loaded with a mix of seafood, potatoes, and corn.</p>
-                            </div>
-                            <span class="menu-price">€12.00</span>
-                        </li>
-                        <hr>
-                    </ul>
-                </div>
+            <div class="menu-category">
+                <h4 class="category" id="main-courses">Main Courses</h4>
+                <ul>
+                    <hr>
+                    <li class="menu-item">
+                        <div>
+                            <span>Chicken and Wild Rice Soup</span>
+                            <p class="menu-description">Hearty soup with tender chicken, wild rice, and a medley of vegetables in a flavorful broth.</p>
+                        </div>
+                        <span class="menu-price">€9.50</span>
+                    </li>
+                    <hr>
+                    <li class="menu-item">
+                        <div>
+                            <span>Lentil and Vegetable Stew</span>
+                            <p class="menu-description">A robust stew featuring lentils, carrots, potatoes, and spinach in a spiced broth.</p>
+                        </div>
+                        <span class="menu-price">€8.50</span>
+                    </li>
+                    <hr>
+                    <li class="menu-item">
+                        <div>
+                            <span>Thai Coconut Curry Noodle Soup</span>
+                            <p class="menu-description">A fusion of Thai flavors with coconut milk, curry, rice noodles, and a variety of colorful vegetables.</p>
+                        </div>
+                        <span class="menu-price">€10.50</span>
+                    </li>
+                    <hr>
+                    <li class="menu-item">
+                        <div>
+                            <span>Seafood Chowder</span>
+                            <p class="menu-description">Rich and creamy chowder loaded with a mix of seafood, potatoes, and corn.</p>
+                        </div>
+                        <span class="menu-price">€12.00</span>
+                    </li>
+                    <hr>
+                </ul>
+            </div>
 
-                <div class="menu-category">
-                    <h4 class="category" id="desserts">Desserts</h4>
-                    <ul>
-                        <hr>
-                        <li class="menu-item">
-                            <div>
-                                <span>Citrus Sorbet with Mint Syrup</span>
-                                <p class="menu-description">Refreshing citrus sorbet drizzled with a homemade mint-infused syrup.</p>
-                            </div>
-                            <span class="menu-price">€4.00</span>
-                        </li>
-                        <hr>
-                        <li class="menu-item">
-                            <div>
-                                <span>Berry Gazpacho Parfait</span>
-                                <p class="menu-description">A sweet twist on the classic gazpacho, featuring layers of mixed berry puree and vanilla yogurt.</p>
-                            </div>
-                            <span class="menu-price">€6.50</span>
-                        </li>
-                        <hr>
-                        <li class="menu-item">
-                            <div>
-                                <span>Pumpkin Pie Soup Shooters</span>
-                                <p class="menu-description">Creamy pumpkin soup with a touch of sweetness, served in small shooter glasses.</p>
-                            </div>
-                            <span class="menu-price">€5.00</span>
-                        </li>
-                        <hr>
-                        <li class="menu-item">
-                            <div>
-                                <span>Chocolate Mocha Pudding Cups</span>
-                                <p class="menu-description">Silky chocolate-mocha pudding topped with whipped cream and chocolate shavings.</p>
-                            </div>
-                            <span class="menu-price">€7.50</span>
-                        </li>
-                    </ul>
-                </div>
+            <div class="menu-category">
+                <h4 class="category" id="desserts">Desserts</h4>
+                <ul>
+                    <hr>
+                    <li class="menu-item">
+                        <div>
+                            <span>Citrus Sorbet with Mint Syrup</span>
+                            <p class="menu-description">Refreshing citrus sorbet drizzled with a homemade mint-infused syrup.</p>
+                        </div>
+                        <span class="menu-price">€4.00</span>
+                    </li>
+                    <hr>
+                    <li class="menu-item">
+                        <div>
+                            <span>Berry Gazpacho Parfait</span>
+                            <p class="menu-description">A sweet twist on the classic gazpacho, featuring layers of mixed berry puree and vanilla yogurt.</p>
+                        </div>
+                        <span class="menu-price">€6.50</span>
+                    </li>
+                    <hr>
+                    <li class="menu-item">
+                        <div>
+                            <span>Pumpkin Pie Soup Shooters</span>
+                            <p class="menu-description">Creamy pumpkin soup with a touch of sweetness, served in small shooter glasses.</p>
+                        </div>
+                        <span class="menu-price">€5.00</span>
+                    </li>
+                    <hr>
+                    <li class="menu-item">
+                        <div>
+                            <span>Chocolate Mocha Pudding Cups</span>
+                            <p class="menu-description">Silky chocolate-mocha pudding topped with whipped cream and chocolate shavings.</p>
+                        </div>
+                        <span class="menu-price">€7.50</span>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
-</section>
+</div>
 <script>
     function scrollToCategory(categoryId) {
         const element = document.getElementById(categoryId);

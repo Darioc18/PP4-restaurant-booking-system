@@ -21,12 +21,19 @@ p {
 .background-pattern {
     background-image: url(/static/images/background.png);
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat;
     width: 100%;
+    z-index: -1;
 }
 
 .btn {
     font-size: 1em;
+}
+
+.message-container__message--text {
+    background-color: #B8C4BB;
+    text-align: center;
+    margin: 0;
 }
 
 /*------ Body ------*/
