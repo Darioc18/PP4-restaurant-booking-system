@@ -2,15 +2,27 @@
 
 * {
     font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
 }
 
 a {
     text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: grey
 }
 
 p {
     margin-bottom: 0.4em;
 }
+
+/* .background-image {
+    background-image: url(/static/images/background.png);
+    background-size: cover;
+    background-position: center;
+} */
 
 /*------ Body ------*/
 
@@ -62,11 +74,15 @@ body {
 
 /*------ Signup Page ------*/
 
-#signup_form {
-    margin-right: 100px;
-    text-align: center;
+#signup-form {
+    margin-right: 130px;
 }
 
 .btn {
     font-size: 1em;
+}
+
+/*------ Login Page ------*/
+.login-container {
+    text-align: left;
 }
