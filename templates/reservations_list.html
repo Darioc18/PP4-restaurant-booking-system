@@ -3,25 +3,22 @@
 {% block content %}
 
 <section id="booking" class="book_a_table">
-    <div class="my_bookings_container">
-        <h2 class="stroke">My Bookings:</h2>
-        <p class="stroke">To edit or cancel a
-            booking please click on the buttons below.</p>
+    <div class="container">
+        <h4 class="stroke">My Bookings:</h4>
         <div class="row">
             {% for reservation in reservations %}
             <div class="col-md-5">
                 <div class="card mb-5">
                     <div class="card-body">
-                        <h5 class='card-title text-uppercase text-center'>{{ reservation.full_name }}</h5>
-                        <h5 class='card-title text-uppercase text-center'>{{ reservation.nick_name }}</h5>
-                        <h6 class="card-subtitle mb-2 text-muted">{{ reservation.date_of_booking }} at
-                            {{ reservation.get_time_display }}</h6>
+                        <h4 class='card-title text-center'>{{ reservation.full_name }}</h4>
+                        <h6 class='card-title text-center'>{{ reservation.nick_name }}</h6>
+                        <h6 class="card-subtitle mb-2 text-muted">{{ reservation.date_of_booking }} at {{ reservation.get_time_display }}</h6>
                         <div class='card-text'>
                             <p>Number of Guests: {{ reservation.num_of_guests }}</p>
                             <p>Notes: {{ reservation.notes }}</p>                                                     
                         </div>
                         <a href="/edit_reservation/{{reservation.id}}" class="btn btn-success">Edit</a>
-                        <a href="/delete_reservation/{{reservation.id}}" class="btn btn-danger">Delete</a>
+                        <a href="/delete_reservation/{{reservation.id}}" class="btn btn-success">Delete</a>
                     </div>
                 </div>
             </div>

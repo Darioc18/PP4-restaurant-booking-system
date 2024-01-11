@@ -1,18 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <div class="container mt-4">
-        <h2 class="mb-4">Booking Confirmation</h2>
+
+<div class="container background-image">
+    <div class="confirmation col-md-3 mx-auto mt-3">
+        <h4>Booking Confirmation</h4>
         <p>Thank you for booking with us. Your reservation is confirmed.</p>
         <p>What would you like to do next?</p>
-
-        <ul class="nav">
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'menu' %}">Check the Menu</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'reservations_list' %}">See Your Reservations</a>
-            </li>
-        </ul>
+        <br>
+        <p><strong><a class="link" href="{% url 'menu' %}">Check the Menu</a></strong></p>
+        <p><strong><a class="link" href="{% url 'reservations_list' %}">See Your Reservations</a></strong></p>        
     </div>
+</div>
 {% endblock %}
