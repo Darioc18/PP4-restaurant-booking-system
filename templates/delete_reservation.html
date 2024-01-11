@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 
 {% block content %}
-
 <div class="container">
     <div class="col-md-4 mx-auto mt-5">
         <h4 class="stroke">Delete Reservation</h4>
@@ -9,11 +8,10 @@
         <form method="POST" class="form">
             {% csrf_token %}
             {{ form.as_p }}
-            <button type="submit" class="btn btn-danger">Confirm Delete</button>
+            <button type="submit" class="btn btn-success">Confirm Delete</button>
             <a href="{% url 'reservations_list' %}" class="btn btn-secondary">Cancel</a>
         </form>
     </div>
 </div>
-
 
 {% endblock %}

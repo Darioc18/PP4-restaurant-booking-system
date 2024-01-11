@@ -6,14 +6,13 @@
 {% block head_title %}{% trans "Sign In" %}{% endblock %}
 
 {% block content %}
-
 <div class="login-container">
     <div class="row">
         <div class="col-md-3 mx-auto mt-5">
             <h4>{% trans "Sign In" %}</h4>
 
-            <p>{% blocktrans %}To book or like a post, please log in.</p>
-            <p>If you have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+            <p>{% blocktrans %}To book or like a post, please log in.{% endblocktrans %}</p>
+            <p>{% blocktrans %}If you have not created an account yet, then <a class="link" href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
         </div>
     </div>
     <div class="row">

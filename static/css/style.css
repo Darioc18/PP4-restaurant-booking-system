@@ -2,12 +2,12 @@
 
 * {
     font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
 }
 
 a {
     text-decoration: none;
     color: black;
+    font-weight: bold;
 }
 
 a:hover {
@@ -18,18 +18,21 @@ p {
     margin-bottom: 0.4em;
 }
 
-/* .background-image {
+.background-pattern {
     background-image: url(/static/images/background.png);
     background-size: cover;
-    background-position: center;
-} */
+    background-repeat: no-repeat;
+    width: 100%;
+}
+
+.btn {
+    font-size: 1em;
+}
 
 /*------ Body ------*/
 
 body {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
+    height: 100%;
     margin: 0;
     padding: 0;
 }
@@ -41,7 +44,10 @@ body {
 }
 
 .hero-image {
-    object-fit: cover;
+    background-image: url(/static/images/restaurant.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     width: 100%;
     height: 100vh;
 }
@@ -72,17 +78,67 @@ body {
     margin-right: 10px;
 }
 
-/*------ Signup Page ------*/
+/*------ Menu Page ------*/
 
-#signup-form {
-    margin-right: 130px;
+.menu-category {
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
-.btn {
+.menu-category .category {
+    padding-left: 33px;
+    font-weight: bold;
+}
+
+.menu-item {
+    list-style: none;
+    /* Remove bullets */
+    display: flex;
+    justify-content: space-between;
+    /* Align name and price */
+}
+
+.menu-item span {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.menu-description,
+.menu-item .menu-price {
     font-size: 1em;
+    font-weight: lighter;
 }
 
-/*------ Login Page ------*/
-.login-container {
-    text-align: left;
+.menu-price {
+    font-weight: bold;
+}
+
+.menu-category hr {
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+.menu-navigation {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.menu-navigation button {
+    margin-right: 10px;
+    border-radius: 25px;
+    background-color: rgb(232, 247, 238);
+    padding: 8px 15px;
+    border: 3px solid #B8C4BB;
+    cursor: pointer;
+}
+
+.container .menu-title {
+    text-align: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 750px) {
+    .hero-image {
+        background-image: url(/static/images/restaurant3.jpg);
+    }
 }
