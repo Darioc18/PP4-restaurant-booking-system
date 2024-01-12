@@ -18,8 +18,6 @@ When completed, the website was deployed using Heroku.
 
 ## User Experience
 
-### User Stories
-
 ### Project Goals
 The goals of the website include:
 
