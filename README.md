@@ -1,39 +1,59 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Soupa Restaurant
+This website is designed for a fictional restaurant located in Ireland.
+It has been created as part of the Project Portfolio 4 for Code Institute's Full Stack Software Development Diploma.
+The development utilized a Full-Stack Toolkit, with VS Code as a IDE, and GitHub for repository management and emulation of an Agile development environment through GitHub Projects.
+When completed, the website was deployed using Heroku.
 
-Welcome,
+![Mockup image](/static/images/readme-images/mockup.png)
 
-This is the Code Institute student template for Codeanywhere. If you are using Gitpod then you need [this template](https://github.com/Code-Institute-Org/gitpod-full-template) instead.  We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+## Live site
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Codeanywhere and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **August 30th, 2023**
+[Soupa Restaurant](https://pp4-restaurant-booking-system-d75be81c2fba.herokuapp.com/) _(Ctrl + click to open in a new tab)_
 
-## Codeanywhere Reminders
+## Table of Contents
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere, in the terminal, type:
 
-`python3 -m http.server`
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+[Back to Contents](#table-of-contents)
 
-To run a frontend (HTML, CSS, Javascript only) application in Codeanywhere with no-cache, you can use this alias for `python3 -m http.server`.
+## User Experience
 
-`http_server`
+### User Stories
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### Project Goals
+The goals of the website include:
 
-A button should appear to click: _Open Preview_ or _Open Browser_.
+- **Online Visibility:** Increase the restaurant's online presence by creating a professional and easily discoverable website.
+- **Menu Showcase:** Clearly present the restaurant's menu with detailed descriptions and prices to attract potential customers.
+- **User-Friendly Experience:** Ensure a seamless and user-friendly experience for visitors, making it easy for them to navigate the website and find relevant information.
+- **Online Reservations:** Implement a reservation system to allow customers to book tables conveniently through the website.
+- **Contact Information:** Display accurate and up-to-date contact information, including address, phone number, and business hours, to assist potential customers.
+- **Responsive Design:** Ensure the website is mobile-friendly and responsive to accommodate users accessing it from various devices.
+- **Social Media Integration:** Connect the website with social media platforms to leverage social sharing and engage with customers on different channels.
 
-In Codeanywhere you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+### User Stories
 
-To log into the Heroku toolbelt CLI:
+#### New User
+- As a new user, I want to navigate the website to gain an understanding of the restaurant's type and offerings. [#1](https://github.com/Darioc18/PP4-restaurant-booking-system/issues/1)
+- As a new user, I want the ability to click on the menu to view the available cuisine types. [#2](https://github.com/Darioc18/PP4-restaurant-booking-system/issues/2)
+- As a new user I can register an account so that I can create, read, update, and delete my reservation. [#4](https://github.com/Darioc18/PP4-restaurant-booking-system/issues/4)
+- As a new user, I want to use the website's map feature to easily locate the restaurant and get directions to ensure a smooth first-time visit. [#7](https://github.com/Darioc18/PP4-restaurant-booking-system/issues/7)
+- As a new user, I expect the website to be responsive, providing a seamless and accessible experience across various devices, ensuring I can easily navigate and explore its content. [#13](https://github.com/Darioc18/PP4-restaurant-booking-system/issues/13)
 
-1. Log in to your Heroku account and go to _Account Settings_ in the menu under your avatar.
-2. Scroll down to the _API Key_ and click _Reveal_
-3. Copy the key
-4. In Codeanywhere, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+#### Existing User
+- As an existing user, I can easily navigate the website to either check alternative menu options or to log in into my account. [#1](https://github.com/Darioc18/PP4-restaurant-booking-system/issues/1)
+-  As an existing user, I want to quickly access and check the menu to explore any new additions or seasonal offerings at the restaurant. [#2](https://github.com/Darioc18/PP4-restaurant-booking-system/issues/2) 
+- As an existing user I can create, read, update, and delete my reservation so that I can manage and update my booking [#5](https://github.com/Darioc18/PP4-restaurant-booking-system/issues/5)
+- As an existing user I can access a profile area so that I can keep track of all of my reservations. [#6](https://github.com/Darioc18/PP4-restaurant-booking-system/issues/6)
+- As an existing user, I rely on the website's map functionality to confirm the restaurant's location and plan my return visits efficiently. [#7](https://github.com/Darioc18/PP4-restaurant-booking-system/issues/7)
+- As an existing user, I appreciate the continued responsiveness of the website, allowing me to consistently access and interact with its features on different devices with ease. [#13](https://github.com/Darioc18/PP4-restaurant-booking-system/issues/13)
+- As an existing user I can reset my password so that I can quickly and securely regain access to my account. [#14](https://github.com/Darioc18/PP4-restaurant-booking-system/issues/14)
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+#### Website Owner/Developer
+- As a Site Admin I can create, read, update, and delete reservations (CRUD functionality) so that I can efficiently manage restaurant bookings [#3](https://github.com/Darioc18/PP4-restaurant-booking-system/issues/3)
 
----
-
-Happy coding!
+#### Benefit of User Stories and Agile Development
+Creating user stories during the development process offers several key benefits for the users, the developers and the customer. 
+- **Benefit for the users:** Creating user stories during the development process, especially within the context of agile development, significantly benefits users by ensuring a continuous and iterative focus on their needs. The agile approach allows for frequent feedback loops and adjustments, meaning that as users see early iterations of the product, their insights can be incorporated quickly. This responsiveness to user feedback leads to a final product that is not only aligned with user expectations but can also adapt to changing requirements throughout the development cycle. 
+- **Benefit for the developers:** In an agile development environment, user stories play a crucial role in providing developers with a clear and prioritized roadmap. By breaking down features into user stories, developers can work on small, manageable tasks in short development cycles, known as sprints. This incremental approach allows for more flexibility and adaptability to changing requirements. Developers can focus on delivering tangible value in each iteration, leading to a more efficient and responsive development process.
+- **Benefit for the customer:** Agile development, driven by user stories, offers customers the advantage of flexibility and continuous improvement. Customers can actively participate in the development process, prioritizing features based on changing business needs. The iterative nature of agile development ensures that customers see a functional product early and often, providing them with a tangible representation of progress. This close collaboration and responsiveness to customer feedback contribute to a final product that not only meets their expectations but also aligns closely with evolving business objectives.
