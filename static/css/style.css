@@ -97,14 +97,6 @@ body {
     font-weight: bold;
 }
 
-.menu-item {
-    list-style: none;
-    /* Remove bullets */
-    display: flex;
-    justify-content: space-between;
-    /* Align name and price */
-}
-
 .menu-item span {
     font-size: 1.2em;
     font-weight: bold;
@@ -142,6 +134,25 @@ body {
 .container .menu-title {
     text-align: center;
     margin-top: 20px;
+}
+
+.menu-item {
+    list-style: none;
+    /* Remove bullets */
+    display: flex;
+    justify-content: space-between;
+    /* Align name and price */
+    border-bottom: 2px solid #ddd;
+    /* Add a border to create separation */
+    margin-bottom: 5px;
+    /* Adjust the margin for spacing */
+    padding-bottom: 10px;
+    /* Adjust padding for spacing */
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+    /* Remove border for the last item */
 }
 
 @media (max-width: 750px) {
