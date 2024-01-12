@@ -62,3 +62,43 @@ The project incorporates only two JavaScript scripts, one for the menu buttons a
 ### Browser Testing
 
 The Website was tested on Google Chrome, Microsoft Edge, and Firefox with no issues.
+
+### Lighthouse
+|Page|Performance|Accessibility|Best Practices|SEO|Screesnshot|
+|----|----|----|----|----|----|
+|Home|95|100|100|90|
+|Menu|99|98|100|90|
+|Reservations List|95|100|100|90|
+|Edit Reservation|91|100|100|90|
+|Delete Reservation|97|100|100|90|
+|Confirmation Page|99|100|100|90|
+|Book a Table|98|100|100|90|
+
+### Manual Testing
+|Item|Action|Expected Result|Pass|
+|----|----|----|----|
+|Logo|Click|Redirect to Home Page|✔|
+|Home link|Click|Redirect to Home Page|✔|
+|Menu link|Click|Redirect to Menu Page|✔|
+|Menu buttons|Click|Redirect to relative sections of the menu|✔|
+|Book a Table link|Click|Redirect to reservation page|✔|
+|Book Now button|Click|Add a reservation to My Reservation|✔|
+|Book a Table drop down menus|Click|selection of number of guests, date, and time allowed|✔|
+|Book a Table date in the past|Click|Invalid form message displayed|✔|
+|Book a Table empty Full name|Blank|Invalid form message displayed|✔|
+|Book a Table make two reservations with same nick name|Text|Invalid form message displayed|✔|
+|Booking Confirmation page links|Click|Redirect either to Menu or to My Reservation page|✔|
+|Login link|Click|Redirect to sign in form|✔|
+|My Reservations link|Click|Redirect to the list of reservations|✔|
+|My Reservations Edit button|Click|Redirect to the edit reservation|✔|
+|My Reservations Delete button|Click|Redirect to confirmation page|✔|
+|Delete reservation button|Click|Delete reservation and direct to My Reservations page|✔|
+|Cancel reservation deletion button|Click|Redirect to My Reservations page|✔|
+|Logout link|Click|Redirect to sign out confirmation page|✔|
+|Sign Out button|Click|Sign out and redirect to home page|✔|
+|Message success when log in and log out|Display|Temporary message visible under the navigation bar|✔|
+|Navbar links|Hover|Color change to dark grey|✔|
+|Footer social links|Hover|Color change to dark grey|✔|
+|Other links|Hover|Color change to dark grey|✔|
+|Invalid forms|Display|Temporary message visible under the navigation bar|✔|
+
