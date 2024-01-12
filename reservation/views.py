@@ -44,7 +44,8 @@ class BookingView(CreateView):
             return redirect('confirmation_page')  # Red. to confirmation page
         else:
             messages.error(request, "Invalid booking. Please ensure \
-            your booking date is not in the past.")
+            your booking date is not in the past \
+            and that a unique nickname is used.")
         return redirect('booking')  # Red. to the booking page with errors
 
 
