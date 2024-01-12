@@ -10,5 +10,25 @@
 |As a Site User I can create, read, update, and delete my reservation so that I can manage and update my booking|Users can perform CRUD operations on their reservations|✔|
 |As a Site User I can access a profile area so that I can keep track of all of my reservations.|A specific section to keep track of all the user's reservation has been provided in *My Reservations*|✔|
 
+### Code Validation
+#### HTML
+All HTML pages were run through the [W3C HTML Validator](https://validator.w3.org/). Results in the table below
 
+|Page|Result|
+|----|----|
+|reservations_list.html|✔|
+|menu.html|✔|
+|index.html|✔|
+|edit_reservation.html|✔|
+|delete_reservation.html|✔|
+|confirmation_page.html|✔|
+|booking.html|✔|
+|base.html|✔|
+
+
+The errors received pertain to the built-in Django functionalities, as illustrated in the screenshot, and are independent of any issues with the HTML structure.
+
+<details><summary>W3C General Error found in .html pages.</summary>
+<img src="/static/images/readme-images/html-validator.jpg">
+</details>
 
