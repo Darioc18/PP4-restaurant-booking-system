@@ -28,7 +28,37 @@ All HTML pages were run through the [W3C HTML Validator](https://validator.w3.or
 
 The errors received pertain to the built-in Django functionalities, as illustrated in the screenshot, and are independent of any issues with the HTML structure.
 
-<details><summary>W3C General Error found in .html pages.</summary>
+<details><summary>W3C HTML Validator General Error found in .html pages.</summary>
 <img src="/static/images/readme-images/html-validator.jpg">
 </details>
 
+#### CSS
+|File|Result|
+|----|----|
+|style.css|✔|
+
+<details><summary>W3C CSS Validator</summary>
+<img src="/static/images/readme-images/css-validator.jpg">
+</details>
+
+#### JavaScript
+
+The project incorporates only two JavaScript scripts, one for the menu buttons and another taken from Code Institute's 'I Think Therefore I Blog' project.
+
+<details><summary>JsHint Validator</summary>
+<img src="/static/images/readme-images/js-validator.jpg">
+</details>
+
+#### Python
+
+|File|Result|
+|----|----|
+|views|✔|
+|urls|✔|
+|models|✔|
+|forms|✔|
+|admin|✔|
+
+### Browser Testing
+
+The Website was tested on Google Chrome, Microsoft Edge, and Firefox with no issues.
