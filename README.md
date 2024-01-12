@@ -15,10 +15,16 @@ When completed, the website was deployed using Heroku.
 [My GitHub](https://github.com/Darioc18/PP4-restaurant-booking-system)
 
 ## Table of Contents
-
-
-
-
+- [User Experience](#user-experience)
+- [Agile Methodology](#agile-methodology)
+- [Database Scheme](#database-scheme)
+- [Defensive Design](#defensive-design)
+- [Design](#design)
+- [Features](#features)
+- [Testing](#testing)
+- [Technologies Used](#technologies-used)
+- [Deployment](#deployment)
+- [Credits](#credits)
 
 ## User Experience
 
@@ -59,7 +65,7 @@ The goals of the website include:
 #### Website Owner/Developer
 - As a Site Admin I can create, read, update, and delete reservations (CRUD functionality) so that I can efficiently manage restaurant bookings [#3](https://github.com/Darioc18/PP4-restaurant-booking-system/issues/3)
 
-#### Benefit of User Stories and Agile Development
+### Benefit of User Stories and Agile Development
 Creating user stories during the development process offers several key benefits for the users, the developers and the customer. 
 - **Benefit for the users:** Creating user stories during the development process, especially within the context of agile development, significantly benefits users by ensuring a continuous and iterative focus on their needs. The agile approach allows for frequent feedback loops and adjustments, meaning that as users see early iterations of the product, their insights can be incorporated quickly. This responsiveness to user feedback leads to a final product that is not only aligned with user expectations but can also adapt to changing requirements throughout the development cycle. 
 - **Benefit for the developers:** In an agile development environment, user stories play a crucial role in providing developers with a clear and prioritized roadmap. By breaking down features into user stories, developers can work on small, manageable tasks in short development cycles, known as sprints. This incremental approach allows for more flexibility and adaptability to changing requirements. Developers can focus on delivering tangible value in each iteration, leading to a more efficient and responsive development process.

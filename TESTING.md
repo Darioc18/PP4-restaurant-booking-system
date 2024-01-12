@@ -7,7 +7,7 @@
 - [Bugs](#bugs)
 - [Unsolved Bugs](#unsolved-bugs)
 
-### User Story Testing
+## User Story Testing
 |User Story|Notes|Result|
 |----|----|----|
 |As a user I can navigate the website so that I can explore the contents of the pages|The user can navigate the website by clicking on the links in the navigation bar|✔|
@@ -17,8 +17,8 @@
 |As a Site User I can create, read, update, and delete my reservation so that I can manage and update my booking|Users can perform CRUD operations on their reservations|✔|
 |As a Site User I can access a profile area so that I can keep track of all of my reservations.|A specific section to keep track of all the user's reservation has been provided in *My Reservations*|✔|
 
-### Code Validation
-#### HTML
+## Code Validation
+### HTML
 All HTML pages were run through the [W3C HTML Validator](https://validator.w3.org/). Results in the table below
 
 |Page|Result|
@@ -39,7 +39,7 @@ The errors received pertain to the built-in Django functionalities, as illustrat
 <img src="/static/images/readme-images/html-validator.jpg">
 </details>
 
-#### CSS
+### CSS
 |File|Result|
 |----|----|
 |style.css|✔|
@@ -48,7 +48,7 @@ The errors received pertain to the built-in Django functionalities, as illustrat
 <img src="/static/images/readme-images/css-validator.jpg">
 </details>
 
-#### JavaScript
+### JavaScript
 
 The project incorporates only two JavaScript scripts, one for the menu buttons and another taken from Code Institute's 'I Think Therefore I Blog' project.
 
@@ -56,7 +56,7 @@ The project incorporates only two JavaScript scripts, one for the menu buttons a
 <img src="/static/images/readme-images/js-validator.jpg">
 </details>
 
-#### Python
+### Python
 
 |File|Result|
 |----|----|
@@ -66,11 +66,11 @@ The project incorporates only two JavaScript scripts, one for the menu buttons a
 |forms|✔|
 |admin|✔|
 
-### Browser Testing
+## Browser Testing
 
 The Website was tested on Google Chrome, Microsoft Edge, and Firefox with no issues.
 
-### Lighthouse
+## Lighthouse
 I performed Lighthouse validation on all pages, evaluating accessibility and performances. The following outlines the results.
 
 |Page|Performance|Accessibility|Best Practices|SEO|
@@ -83,7 +83,7 @@ I performed Lighthouse validation on all pages, evaluating accessibility and per
 |Confirmation Page|99|100|100|100|
 |Book a Table|98|100|100|100|
 
-### Manual Testing
+## Manual Testing
 |Item|Action|Expected Result|Pass|
 |----|----|----|----|
 |Logo|Click|Redirect to Home Page|✔|
@@ -111,7 +111,7 @@ I performed Lighthouse validation on all pages, evaluating accessibility and per
 |Other links|Hover|Color change to dark grey|✔|
 |Invalid forms|Display|Temporary message visible under the navigation bar|✔|
 
-### Bugs
+## Bugs
 I have documented all the bugs addressed over the development of the projects on the GitHub Projects kanban. Below there's a summary and links.
 
 |Bug|Status|
@@ -122,7 +122,7 @@ I have documented all the bugs addressed over the development of the projects on
 |[Time Display Issues in Reservation List #11](https://github.com/Darioc18/PP4-restaurant-booking-system/issues/11)|Closed|
 |[Optimizing Form Proportions for Improved User Experience #12](https://github.com/Darioc18/PP4-restaurant-booking-system/issues/12)|Closed|
 
-### Unsolved Bugs
+## Unsolved Bugs
 No unsolved bugs reported in the project
 
 [Back to Contents](#table-of-contents---testing)
