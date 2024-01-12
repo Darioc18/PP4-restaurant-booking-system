@@ -1,4 +1,11 @@
 ## Table of Contents - Testing
+- [User Story Testing](#user-story-testing)
+- [Code Validation](#code-validation)
+- [Browser Testing](#browser-testing)
+- [Lighthouse](#lighthouse)
+- [Manual Testing](#manual-testing)
+- [Bugs](#bugs)
+- [Unsolved Bugs](#unsolved-bugs)
 
 ### User Story Testing
 |User Story|Notes|Result|
@@ -64,15 +71,17 @@ The project incorporates only two JavaScript scripts, one for the menu buttons a
 The Website was tested on Google Chrome, Microsoft Edge, and Firefox with no issues.
 
 ### Lighthouse
-|Page|Performance|Accessibility|Best Practices|SEO|Screesnshot|
-|----|----|----|----|----|----|
-|Home|95|100|100|90|
-|Menu|99|98|100|90|
-|Reservations List|95|100|100|90|
-|Edit Reservation|91|100|100|90|
-|Delete Reservation|97|100|100|90|
-|Confirmation Page|99|100|100|90|
-|Book a Table|98|100|100|90|
+I performed Lighthouse validation on all pages, evaluating accessibility and performances. The following outlines the results.
+
+|Page|Performance|Accessibility|Best Practices|SEO|
+|----|----|----|----|----|
+|Home|95|100|100|100|
+|Menu|99|98|100|100|
+|Reservations List|95|100|100|100|
+|Edit Reservation|91|100|100|100|
+|Delete Reservation|97|100|100|100|
+|Confirmation Page|99|100|100|100|
+|Book a Table|98|100|100|100|
 
 ### Manual Testing
 |Item|Action|Expected Result|Pass|
@@ -102,3 +111,18 @@ The Website was tested on Google Chrome, Microsoft Edge, and Firefox with no iss
 |Other links|Hover|Color change to dark grey|✔|
 |Invalid forms|Display|Temporary message visible under the navigation bar|✔|
 
+### Bugs
+I have documented all the bugs addressed over the development of the projects on the GitHub Projects kanban. Below there's a summary and links.
+
+|Bug|Status|
+|----|----|
+|[Date of booking in the future only #8](https://github.com/Darioc18/PP4-restaurant-booking-system/issues/8)|Closed|
+|[Preventing Selection of Past Time/Date for Bookings #9](https://github.com/Darioc18/PP4-restaurant-booking-system/issues/9)|Closed|
+|[Date Django Widget Issue #10](https://github.com/Darioc18/PP4-restaurant-booking-system/issues/10)|Closed|
+|[Time Display Issues in Reservation List #11](https://github.com/Darioc18/PP4-restaurant-booking-system/issues/11)|Closed|
+|[Optimizing Form Proportions for Improved User Experience #12](https://github.com/Darioc18/PP4-restaurant-booking-system/issues/12)|Closed|
+
+### Unsolved Bugs
+No unsolved bugs reported in the project
+
+[Back to Contents](#table-of-contents---testing)
