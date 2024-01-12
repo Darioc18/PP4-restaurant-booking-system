@@ -14,7 +14,7 @@ When completed, the website was deployed using Heroku.
 
 
 
-[Back to Contents](#table-of-contents)
+
 
 ## User Experience
 
@@ -28,6 +28,8 @@ The goals of the website include:
 - **Contact Information:** Display accurate and up-to-date contact information, including address, phone number, and business hours, to assist potential customers.
 - **Responsive Design:** Ensure the website is mobile-friendly and responsive to accommodate users accessing it from various devices.
 - **Social Media Integration:** Connect the website with social media platforms to leverage social sharing and engage with customers on different channels.
+
+[Back to Contents](#table-of-contents)
 
 ### User Stories
 
@@ -55,3 +57,23 @@ Creating user stories during the development process offers several key benefits
 - **Benefit for the users:** Creating user stories during the development process, especially within the context of agile development, significantly benefits users by ensuring a continuous and iterative focus on their needs. The agile approach allows for frequent feedback loops and adjustments, meaning that as users see early iterations of the product, their insights can be incorporated quickly. This responsiveness to user feedback leads to a final product that is not only aligned with user expectations but can also adapt to changing requirements throughout the development cycle. 
 - **Benefit for the developers:** In an agile development environment, user stories play a crucial role in providing developers with a clear and prioritized roadmap. By breaking down features into user stories, developers can work on small, manageable tasks in short development cycles, known as sprints. This incremental approach allows for more flexibility and adaptability to changing requirements. Developers can focus on delivering tangible value in each iteration, leading to a more efficient and responsive development process.
 - **Benefit for the customer:** Agile development, driven by user stories, offers customers the advantage of flexibility and continuous improvement. Customers can actively participate in the development process, prioritizing features based on changing business needs. The iterative nature of agile development ensures that customers see a functional product early and often, providing them with a tangible representation of progress. This close collaboration and responsiveness to customer feedback contribute to a final product that not only meets their expectations but also aligns closely with evolving business objectives.
+
+[Back to Contents](#table-of-contents)
+
+### Agile Methodology
+GitHub Projects was used to manage the development process following an agile methodology. The project board, accessible through this [link](https://github.com/users/Darioc18/projects/2), served as a practical tool for organizing tasks and tracking progress. This approach allowed the team to respond promptly to changes and collaborate effectively.
+
+The **MOSCOW** method was employed for task prioritization, categorizing them into Must-haves, Should-haves, Could-haves, and Won't-haves. This systematic prioritization ensured a focused and flexible development process, adapting to changing requirements while delivering incremental value.
+
+[Back to Contents](#table-of-contents)
+
+### Database Scheme
+The data model for the restaurant project adheres to Object-Oriented Programming principles and utilizes Django's Class-Based Views. The **user authentication system** is powered by Django AllAuth.
+Facilitating table bookings involves the incorporation of a **custom reservation model**. This model captures essential details like full name, nickname, booking date and time, number of guests, and any additional notes from guests. Importantly, the reservation model establishes a connection with the User model, ensuring that each reservation is associated with a specific user.
+
+![Database Scheme](/static/images/readme-images/data-model.png)
+
+[Back to Contents](#table-of-contents)
+
+
+
